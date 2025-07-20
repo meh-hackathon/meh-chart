@@ -1,0 +1,21 @@
+---
+apiVersion: "v2"
+name: "meh"
+description: "A lightweight Helm chart for meh that prioritizes transparency and flexibility"
+type: "application"
+icon: "https://avatars.githubusercontent.com/u/67865462"
+keywords:
+  - "app"
+maintainers:
+  - name: "ernail"
+    email: "nagel.eric.95@googlemail.com"
+annotations:
+  artifacthub.io/license: "MIT"
+  artifacthub.io/links: |
+    - name: source
+      url: https://github.com/meh-hackathon/meh-chart
+    - name: support
+      url: https://github.com/meh-hackathon/meh-chart
+version: "0.0.0"
+appVersion: "1.0.0-rc16402919931"
+...

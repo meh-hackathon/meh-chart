@@ -1,0 +1,17 @@
+---
+apiVersion: "postgresql.cnpg.io/v1"
+kind: "Cluster"
+metadata:
+  name: "meh-postgresql"
+  namespace: "meh"
+spec:
+  instances: 2
+  storage:
+    size: "4Gi"
+  bootstrap:
+    initdb:
+      database: "meh"
+      owner: "meh"
+      secret:
+        name: "meh-db-credentials"
+...

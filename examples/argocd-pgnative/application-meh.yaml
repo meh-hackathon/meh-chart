@@ -1,0 +1,30 @@
+---
+apiVersion: "argoproj.io/v1alpha1"
+kind: "Application"
+metadata:
+  name: "meh"
+  namespace: "argocd"
+spec:
+  project: "default"
+  sources:
+    - repoURL: "https://github.com/meh-hackathon/meh-chart"
+      targetRevision: "feat/add-chart"
+      path: "examples/argocd-pgnative"
+      ref: "values"
+    - repoURL: "https://github.com/meh-hackathon/meh-chart"
+      targetRevision: "feat/add-chart"
+      path: "chart"
+      helm:
+        releaseName: "meh"
+        valueFiles:
+          - "$values/examples/argocd-pgnative/values-meh.yaml"
+  destination:
+    server: "https://kubernetes.default.svc"
+    namespace: "meh"
+  syncPolicy:
+    automated:
+      prune: true
+      selfHeal: true
+    syncOptions:
+      - "CreateNamespace=true"
+...
